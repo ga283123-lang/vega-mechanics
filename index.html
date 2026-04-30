@@ -111,14 +111,18 @@
                     <div class="form-wrapper">
                         <h3 class="title-yellow">Agendar Cita Técnica</h3>
                         <form action="https://formspree.io/f/xlgzroyp" method="POST">
-                            <input type="text" placeholder="Nombre completo" required>
-                            <input type="text" placeholder="Marca y Modelo del vehículo" required>
-                            <select>
-                                <option>Diagnóstico Electrónico</option>
-                                <option>Mecánica General</option>
-                                <option>Mantenimiento Preventivo</option>
+                            <input type="text" name="nombre" placeholder="Nombre completo (Numero o correo)" required>
+        
+                            <input type="text" name="vehiculo" placeholder="Marca y Modelo del vehículo" required>
+        
+                            <select name="servicio">
+                                <option value="Diagnóstico Electrónico">Diagnóstico Electrónico</option>
+                                <option value="Mecánica General">Mecánica General</option>
+                                <option value="Mantenimiento Preventivo">Mantenimiento Preventivo</option>
                             </select>
-                            <textarea placeholder="Detalle de la falla técnica..." rows="4"></textarea>
+                            
+                            <textarea name="detalle_falla" placeholder="Detalle de la falla técnica..." rows="4"></textarea>
+                            
                             <button type="submit" class="btn-submit">Enviar Solicitud</button>
                         </form>
                     </div>
