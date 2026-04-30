@@ -6,70 +6,89 @@
     --gris-panel: #162447;
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Inter', sans-serif; background-color: var(--azul-uniforme); color: var(--blanco); line-height: 1.6; }
-.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+/* 1. RESET CRÍTICO PARA RESPONSIVE */
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
 
-/* Header y Menú ajustado a la izquierda */
-header { background: #000; position: sticky; top: 0; z-index: 1000; }
+body { 
+    font-family: 'Inter', sans-serif; 
+    background-color: var(--azul-uniforme); 
+    color: var(--blanco); 
+    line-height: 1.6; 
+    overflow-x: hidden; /* Evita el scroll horizontal */
+    width: 100%;
+}
+
+.container { 
+    max-width: 1100px; 
+    margin: 0 auto; 
+    padding: 0 20px; 
+    width: 100%;
+}
+
+/* HEADER RESPONSIVE */
+header { background: #000; position: sticky; top: 0; z-index: 1000; width: 100%; }
 .header-container { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; }
-.logo-wrapper { margin-left: 20px; }
-.logo-img { height: 55px; }
-.main-nav { margin-right: 60px; } /* Mueve el menú hacia la izquierda */
-.border-red { height: 4px; background: var(--rojo-detalle); width: 100%; }
+.logo-img { height: 50px; max-width: 100%; width: auto; }
 
-nav ul { list-style: none; display: flex; gap: 25px; }
-.nav-link { color: var(--blanco); text-decoration: none; font-weight: 800; font-size: 0.85rem; text-transform: uppercase; }
-.nav-link:hover { color: var(--amarillo-vega); }
+nav ul { list-style: none; display: flex; gap: 20px; }
+.nav-link { color: var(--blanco); text-decoration: none; font-weight: 800; font-size: 0.8rem; text-transform: uppercase; }
 
-/* Títulos */
-.title-yellow { color: var(--amarillo-vega); text-transform: uppercase; font-weight: 900; margin-bottom: 15px; }
-.color-red { color: var(--rojo-detalle); margin-right: 8px; }
+/* HERO */
+.hero-section { padding: 60px 0; text-align: center; background: linear-gradient(rgba(13,27,62,0.9), rgba(13,27,62,0.9)), url('taller.jpg'); background-size: cover; }
+h1 { font-size: clamp(1.8rem, 5vw, 2.8rem); margin: 15px 0; }
 
-/* Hero */
-.hero-section { padding: 80px 0; text-align: center; background: linear-gradient(rgba(13,27,62,0.85), rgba(13,27,62,0.85)), url('taller.jpg'); background-size: cover; }
-.badge { background: var(--rojo-detalle); padding: 4px 12px; font-weight: bold; border-radius: 2px; font-size: 0.7rem; }
-h1 { font-size: 2.8rem; color: var(--blanco); margin: 15px 0; }
+/* GRIDS FLEXIBLES */
+.grid-2 { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 30px; align-items: start; }
+.contacto-grid { display: grid; grid-template-columns: 2fr 1.2fr; gap: 30px; background: var(--gris-panel); padding: 30px; border-radius: 8px; }
 
-/* Trayectoria */
-.trayectoria-premium { padding: 70px 0; background: var(--gris-panel); border-bottom: 1px solid var(--rojo-detalle); }
-.grid-2 { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center; }
-.lead { font-size: 1.2rem; font-weight: 800; border-left: 5px solid var(--rojo-detalle); padding-left: 15px; margin-bottom: 20px; }
-.punto { margin-bottom: 10px; font-weight: 700; color: #cbd5e1; }
-.punto i { color: var(--rojo-detalle); }
+/* MAPA RESPONSIVE */
+.mapa-google {
+    width: 100% !important; /* Obliga a que no se pase del contenedor */
+    height: 300px;
+    margin-top: 20px;
+    border-radius: 4px;
+}
 
-.stats-grid { display: grid; gap: 15px; }
-.stat-box { background: var(--azul-uniforme); padding: 25px; border-radius: 4px; border: 1px solid #1f2d5a; text-align: center; }
-.stat-box.red-accent { border-top: 5px solid var(--rojo-detalle); }
-.stat-box.yellow-accent { border-top: 5px solid var(--amarillo-vega); }
-.stat-num { font-size: 2.5rem; font-weight: 900; color: var(--blanco); display: block; }
-.stat-desc { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; color: var(--amarillo-vega); }
+/* BOTONES Y FORM */
+input, select, textarea { width: 100%; padding: 12px; margin-bottom: 10px; background: var(--azul-uniforme); border: 1px solid #1f2d5a; color: #fff; }
+.btn-submit { background: var(--amarillo-vega); color: var(--azul-uniforme); border: none; padding: 15px; width: 100%; font-weight: 900; cursor: pointer; }
 
-/* SVG */
-.svg-wrapper { background: #050a18; border: 1px solid var(--gris-panel); padding: 30px; border-radius: 8px; margin: 30px 0; position: relative; }
-.car-outline { fill: none; stroke: var(--amarillo-vega); stroke-width: 2; }
-.punto-fijo { fill: var(--rojo-detalle); stroke: rgba(204,0,0,0.3); stroke-width: 12; cursor: pointer; transition: 0.3s; }
-.hotspot:hover .punto-fijo { fill: var(--amarillo-vega); stroke-width: 18; }
-.texto-hover { fill: var(--blanco); font-weight: 800; font-size: 14px; opacity: 0; pointer-events: none; text-anchor: middle; }
-.hotspot:hover .texto-hover { opacity: 1; }
+/* WHATSAPP */
+.whatsapp-btn { position: fixed; bottom: 20px; right: 20px; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1000; background: #25d366; color: white; text-decoration: none; font-size: 24px; }
 
-.info-panel { background: var(--gris-panel); padding: 30px; border-radius: 5px; border-bottom: 5px solid var(--rojo-detalle); }
-.info-panel h3 { color: var(--amarillo-vega); text-transform: uppercase; margin-bottom: 8px; }
-
-/* Formulario con Botón Amarillo */
-.contacto-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 30px; background: var(--gris-panel); padding: 40px; border-radius: 8px; border: 1px solid #1f2d5a; }
-input, select, textarea { width: 100%; padding: 12px; margin-bottom: 15px; background: var(--azul-uniforme); border: 1px solid #1f2d5a; color: #fff; border-radius: 4px; }
-.btn-submit { background: var(--amarillo-vega); color: var(--azul-uniforme); border: none; padding: 15px; width: 100%; font-weight: 900; text-transform: uppercase; cursor: pointer; transition: 0.3s; }
-.btn-submit:hover { background: var(--rojo-detalle); color: #fff; }
-
-.map-link { display: inline-block; margin-top: 10px; color: var(--amarillo-vega); text-decoration: none; font-weight: 700; font-size: 0.9rem; }
-.map-link:hover { text-decoration: underline; }
-.red-line { height: 3px; background: var(--rojo-detalle); width: 50px; margin-top: 15px; }
-
-/* WhatsApp */
-.whatsapp-btn { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.4); z-index: 1000; }
-
+/* --- MEDIA QUERIES (EL TRUCO PARA EL CELULAR) --- */
 @media (max-width: 768px) {
-    .grid-2, .contacto-grid { grid-template-columns: 1fr; }
-    .main-nav { margin-right: 0; }
+    .header-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    nav ul {
+        gap: 10px;
+    }
+
+    .grid-2, .contacto-grid {
+        grid-template-columns: 1fr; /* Una sola columna en móvil */
+    }
+
+    .contacto-grid {
+        padding: 20px;
+    }
+
+    .hero-section {
+        padding: 40px 20px;
+    }
+
+    /* Ocultamos el SVG en móviles muy pequeños si rompe el diseño */
+    .svg-wrapper {
+        overflow-x: auto;
+    }
+    
+    .carro-svg {
+        min-width: 500px; /* Permite scroll interno al carro pero no a la página */
+    }
 }
