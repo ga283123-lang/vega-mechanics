@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vega Mechanics | Ingeniería Automotriz</title>
+    <link rel="stylesheet" href="taller.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo-wrapper">
+                <img src="descarga.png" alt="Vega Mechanics" class="logo-img">
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#experiencia" class="nav-link">Trayectoria</a></li>
+                    <li><a href="#servicios" class="nav-link">Servicios</a></li>
+                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="border-red"></div>
+    </header>
+
+    <main>
+        <section id="hero" class="hero-section">
+            <div class="container hero-content">
+                <span class="badge">Ingeniería de Precisión</span>
+                <h1>Especialistas en Inyección y Electrónica</h1>
+                <p>Más de una década brindando soluciones técnicas avanzadas en Cartago. Dirección técnica por <strong>Randall Vega</strong>.</p>
+            </div>
+        </section>
+
+        <section id="experiencia" class="trayectoria-premium">
+            <div class="container">
+                <div class="grid-2">
+                    <div class="texto-experiencia">
+                        <h2 class="title-yellow">Trayectoria y Confianza</h2>
+                        <p class="lead">En <strong>Vega Mechanics</strong>, garantizamos seguridad y rendimiento óptimo.</p>
+                        <p>Nos especializamos en sistemas complejos de inyección y diagnóstico computarizado que otros talleres suelen delegar.</p>
+                        
+                        <div class="puntos-clave">
+                            <div class="punto"><i class="fas fa-caret-right"></i> Diagnóstico con escaner computarizado avanzado.</div>
+                            <div class="punto"><i class="fas fa-caret-right"></i> Especialistas en inyección electrónica.</div>
+                            <div class="punto"><i class="fas fa-caret-right"></i> Mantenimiento preventivo de flotas.</div>
+                        </div>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-box red-accent">
+                            <span class="stat-num">+10</span>
+                            <span class="stat-desc">Años de Experiencia</span>
+                        </div>
+                        <div class="stat-box yellow-accent">
+                            <span class="stat-num">100%</span>
+                            <span class="stat-desc">Garantía de Servicio</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="interactivo" class="interactivo-seccion">
+            <div class="container">
+                <h2 class="title-yellow">Análisis Técnico de Sistemas</h2>
+                <p>Toque los puntos rojos para inspeccionar el protocolo técnico.</p>
+                
+                <div class="plano-container">
+                    <div class="svg-wrapper">
+                        <svg viewBox="0 0 800 300" class="carro-svg">
+                            <path class="car-outline" d="M 150 200 L 200 200 A 40 40 0 0 1 280 200 L 520 200 A 40 40 0 0 1 600 200 L 650 200 C 680 200 680 170 650 160 L 550 150 L 450 90 L 300 90 L 200 140 L 120 140 C 100 140 100 200 150 200 Z" />
+                            <circle class="car-wheel" cx="240" cy="200" r="32" />
+                            <circle class="car-wheel" cx="560" cy="200" r="32" />
+                            
+                            <g class="hotspot" onclick="seleccionarParte('motor')">
+                                <circle cx="630" cy="165" r="12" class="punto-fijo"/>
+                                <text x="630" y="130" class="texto-hover">MOTOR</text>
+                            </g>
+                            
+                            <g class="hotspot" onclick="seleccionarParte('frenos')">
+                                <circle cx="242" cy="200" r="12" class="punto-fijo"/>
+                                <text x="400" y="240" class="texto-hover">SISTEMA FRENADO</text>
+                            </g>
+                            
+                            <g class="hotspot" onclick="seleccionarParte('transmision')">
+                                <circle cx="500" cy="200" r="12" class="punto-fijo"/>
+                                <text x="400" y="240" class="texto-hover">SISTEMA TRANSMISION</text>
+                            </g>
+                            <g class="hotspot" onclick="seleccionarParte('electrico')">
+                                <circle cx="350" cy="120" r="12" class="punto-fijo"/>
+                                <text x="350" y="90" class="texto-hover">ELECTRÓNICA</text>
+                            </g>
+                        </svg>
+                    </div>
+
+                    <div id="info-panel" class="info-panel">
+                        <h3 id="info-titulo">Protocolo Vega Mechanics</h3>
+                        <p id="info-descripcion">Seleccione un área de interés para ver el detalle de ingeniería.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="contacto-seccion">
+            <div class="container">
+                <div class="contacto-grid">
+                    <div class="form-wrapper">
+                        <h3 class="title-yellow">Agendar Cita Técnica</h3>
+                        <form action="https://formspree.io/f/xlgzroyp" method="POST">
+                            <input type="text" placeholder="Nombre completo" required>
+                            <input type="text" placeholder="Marca y Modelo del vehículo" required>
+                            <select>
+                                <option>Diagnóstico Electrónico</option>
+                                <option>Mecánica General</option>
+                                <option>Mantenimiento Preventivo</option>
+                            </select>
+                            <textarea placeholder="Detalle de la falla técnica..." rows="4"></textarea>
+                            <button type="submit" class="btn-submit">Enviar Solicitud</button>
+                        </form>
+                    </div>
+                    <div class="info-wrapper">
+                        <h3 class="title-yellow">Planta Cartago</h3>
+                        <p><strong>Director:</strong> Randall Vega</p>
+                        <p><i class="fas fa-phone-alt color-red"></i> 7101-0575 / 2591-4358</p>
+                        <p><i class="fas fa-map-marker-alt color-red"></i> Cartago, Costa Rica</p>
+                        <a href="https://www.google.com/maps/place/Vega+mechanics/@9.859812,-83.930416,16z/data=!4m6!3m5!1s0x8fa0dfe2c185df8f:0x72803d5da28e346a!8m2!3d9.8598115!4d-83.9304163!16s%2Fg%2F11c60g6wjg?hl=es-419&entry=ttu&g_ep=EgoyMDI2MDQyNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="map-link">
+                            <i class="fas fa-external-link-alt"></i> Ver en el mapa
+                        </a>
+                        <div class="red-line"></div>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.887421557904!2d-83.93299122580558!3d9.859811490238512!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0dfe2c185df8f%3A0x72803d5da28e346a!2sVega%20mechanics!5e0!3m2!1ses-419!2scr!4v1777434674754!5m2!1ses-419!2scr" width="500" height="350" style="border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <a href="https://wa.me/50671010575" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="taller.js"></script>
+</body>
+</html>
